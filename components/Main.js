@@ -16,3 +16,12 @@ class Main extends Component {
 }
 
 export default Main;
+
+// Functional component alternative
+// function Main() {
+//   const [campsites, setCampsites] = React.useState(Campsites) < - - - don't need this???
+
+//   return (
+//     <Directory campsites={Campsites} />
+//   )
+// }
