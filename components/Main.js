@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Directory from "./Directory";
+import CampsiteInfo from "./CampsiteInfo";
 import { CAMPSITES } from "../shared/campsites";
 
 class Main extends Component {
@@ -7,7 +8,12 @@ class Main extends Component {
     super(props);
     this.state = {
       campsites: CAMPSITES,
+      selectedCampsite: null,
     };
+  }
+
+  onCampsiteSelect(campsiteID) {
+    this.setState({ selectedCampsite: campsiteID });
   }
 
   render() {
