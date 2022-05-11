@@ -17,7 +17,21 @@ class Main extends Component {
   }
 
   render() {
-    return <Directory campsites={this.state.campsites} />;
+    return (
+      <View style={{ flex: 1 }}>
+        <Directory
+          campsites={this.state.campsites}
+          onPress={(campsiteId) => this.onCampsiteSelect(campsiteId)}
+        />
+        <CampsiteInfo
+          campsite={
+            this.state.campsites.filter(
+              (campsite) => campsite.id === this.state.selectedCampsite
+            )[0]
+          }
+        />
+      </View>
+    );
   }
 }
 
