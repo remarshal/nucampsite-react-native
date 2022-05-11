@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Directory from "./Directory";
 import CampsiteInfo from "./CampsiteInfo";
+import { View } from "react-native";
 import { CAMPSITES } from "../shared/campsites";
 
 class Main extends Component {
