@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Home from "./Home";
 import Directory from "./Directory";
+import About from "./About";
+import Contact from "./Contact";
 import CampsiteInfo from "./CampsiteInfo";
 import Constants from "expo-constants";
 import { View, Platform } from "react-native";
