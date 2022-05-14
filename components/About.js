@@ -7,7 +7,7 @@ import { PARTNERS } from "../shared/partners";
 
 function Mission() {
   return (
-    <Card title="Mission">
+    <Card title="Our Mission">
       <Text style={{ margin: 10 }}>
         We present a curated database of the best campsites in the vast woods
         and backcountry of the World Wide Web Wilderness. We increase access to
