@@ -5,11 +5,19 @@ import About from "./About";
 import Contact from "./Contact";
 import CampsiteInfo from "./CampsiteInfo";
 import Constants from "expo-constants";
-import { View, Platform, StyleSheet } from "react-native";
+import {
+  View,
+  Platform,
+  StyleSheet,
+  Text,
+  ScrollView,
+  Image,
+} from "react-native";
 import { Icon } from "react-native-elements";
 import { createStackNavigator } from "react-navigation-stack";
-import { createDrawerNavigator } from "react-navigation-drawer";
+import { createDrawerNavigator, DrawerItems } from "react-navigation-drawer";
 import { createAppContainer } from "react-navigation";
+import SafeAreaView from "react-native-safe-area-view";
 
 const HomeNavigator = createStackNavigator(
   {
@@ -117,6 +125,28 @@ const ContactNavigator = createStackNavigator(
   }
 );
 
+const CustomDrawerContentComponent = (props) => (
+  <ScrollView>
+    <SafeAreaView
+      style={styles.container}
+      forceInset={{ top: "always", horizontal: "never" }}
+    >
+      <View style={styles.drawerHeader}>
+        <View style={{ flex: 1 }}>
+          <Image
+            source={require("./images/logo.png")}
+            style={styles.drawerImage}
+          />
+        </View>
+        <View style={{ flex: 2 }}>
+          <Text style={styles.drawerHeaderText}>NuCamp</Text>
+        </View>
+      </View>
+      <DrawerItems {...props} />
+    </SafeAreaView>
+  </ScrollView>
+);
+
 const MainNavigator = createDrawerNavigator(
   {
     Home: {
@@ -166,6 +196,7 @@ const MainNavigator = createDrawerNavigator(
   },
   {
     drawerBackgroundColor: "#CEC8FF",
+    contentComponent: CustomDrawerContentComponent,
   }
 );
 
