@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Home from "./Home";
-import Directory from "./Directory";
-import About from "./About";
-import Contact from "./Contact";
-import Reservation from "./Reservation";
-import CampsiteInfo from "./CampsiteInfo";
+import Home from "./HomeComponent";
+import Directory from "./DirectoryComponent";
+import About from "./AboutComponent";
+import Contact from "./ContactComponent";
+import Reservation from "./ReservationComponent";
+import CampsiteInfo from "./CampsiteInfoComponent";
 import Constants from "expo-constants";
 import {
   View,

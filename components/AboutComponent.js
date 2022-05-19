@@ -3,7 +3,7 @@ import { ScrollView, Text, FlatList } from "react-native";
 import { Card, ListItem } from "react-native-elements";
 import { connect } from "react-redux";
 import { baseUrl } from "../shared/baseUrl";
-import Loading from "./Loading";
+import Loading from "./LoadingComponent";
 
 const mapStateToProps = (state) => {
   return {
