@@ -108,7 +108,7 @@ class CampsiteInfo extends Component {
   }
 
   handleComment(campsiteId) {
-    console.log(JSON.stringify(this.state));
+    console.log(JSON.stringify(campsiteId));
     this.toggleModal();
   }
 
@@ -180,8 +180,18 @@ class CampsiteInfo extends Component {
             <View style={{ margin: 10 }}>
               <Button
                 onPress={() => {
+                  this.handleComment(campsiteId);
+                  this.resetForm();
+                }}
+                color="#5637DD"
+                title="Submit"
+              />
+            </View>
+            <View style={{ margin: 10 }}>
+              <Button
+                onPress={() => {
                   this.toggleModal();
-                  // this.resetForm();
+                  this.resetForm();
                 }}
                 color="#808080"
                 title="Cancel"
