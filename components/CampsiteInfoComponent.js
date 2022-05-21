@@ -80,6 +80,14 @@ function RenderComments({ comments }) {
 }
 
 class CampsiteInfo extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showModal: false,
+    };
+  }
+
   static navigationOptions = {
     title: "Campsite Information",
   };
