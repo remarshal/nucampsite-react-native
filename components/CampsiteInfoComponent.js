@@ -6,7 +6,7 @@ import {
   FlatList,
   Modal,
   Button,
-  Stylesheet,
+  StyleSheet,
 } from "react-native";
 import { Card, Icon } from "react-native-elements";
 import { connect } from "react-redux";
@@ -35,7 +35,7 @@ function RenderCampsite(props) {
         image={{ uri: baseUrl + campsite.image }}
       >
         <Text style={{ margin: 10 }}>{campsite.description}</Text>
-        <View>
+        <View style={styles.cardRow}>
           <Icon
             name={props.favorite ? "heart" : "heart-o"}
             type="font-awesome"
@@ -125,9 +125,42 @@ class CampsiteInfo extends Component {
           onShowModal={() => this.toggleModal()}
         />
         <RenderComments comments={comments} />
+        <Modal
+          animationType={"slide"}
+          transparent={false}
+          visible={this.state.showModal}
+          onRequestClose={() => this.toggleModal()}
+        >
+          <View style={styles.modal}>
+            <View style={{ margin: 10 }}>
+              <Button
+                onPress={() => {
+                  this.toggleModal();
+                  // this.resetForm();
+                }}
+                color="#808080"
+                title="Cancel"
+              />
+            </View>
+          </View>
+        </Modal>
       </ScrollView>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  cardRow: {
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+    flexDirection: "row",
+    margin: 20,
+  },
+  modal: {
+    justifyContent: "center",
+    margin: 20,
+  },
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(CampsiteInfo);
