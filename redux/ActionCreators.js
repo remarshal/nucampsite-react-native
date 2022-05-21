@@ -181,7 +181,7 @@ export const postComment = (campsiteId, rating, author, text) => (dispatch) => {
   }, 2000);
 };
 
-export const addComment = (campsiteId) => ({
+export const addComment = (comment) => ({
   type: ActionTypes.ADD_COMMENT,
-  payload: campsiteId,
+  payload: comment,
 });
