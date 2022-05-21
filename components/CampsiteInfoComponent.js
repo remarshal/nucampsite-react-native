@@ -8,7 +8,7 @@ import {
   Button,
   StyleSheet,
 } from "react-native";
-import { Card, Icon } from "react-native-elements";
+import { Card, Icon, Input, Rating } from "react-native-elements";
 import { connect } from "react-redux";
 import { baseUrl } from "../shared/baseUrl";
 import { postFavorite } from "../redux/ActionCreators";
@@ -149,6 +149,34 @@ class CampsiteInfo extends Component {
           onRequestClose={() => this.toggleModal()}
         >
           <View style={styles.modal}>
+            <Rating
+              showRating
+              startingValue={this.state.rating}
+              imageSize={40}
+              onFinishRating={(rating) => this.setState({ rating: rating })}
+              style={{ paddingVertical: 10 }}
+            />
+            <Input
+              placeholder="Author"
+              leftIcon={{
+                type: "font-awesome",
+                name: "user-o",
+              }}
+              leftIconContainerStyle={{ padding: 10 }}
+              onChangeText={(author) => {
+                this.setState({ author: author });
+              }}
+              value={this.state.author}
+            />
+            <Input
+              placeholder="Comment"
+              leftIcon={{ type: "font-awesome", name: "comment-o" }}
+              leftIconContainerStyle={{ padding: 10 }}
+              onChangeText={(text) => {
+                this.setState({ text: text });
+              }}
+              value={this.state.text}
+            />
             <View style={{ margin: 10 }}>
               <Button
                 onPress={() => {
