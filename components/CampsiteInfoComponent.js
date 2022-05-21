@@ -27,18 +27,28 @@ function RenderCampsite(props) {
         image={{ uri: baseUrl + campsite.image }}
       >
         <Text style={{ margin: 10 }}>{campsite.description}</Text>
-        <Icon
-          name={props.favorite ? "heart" : "heart-o"}
-          type="font-awesome"
-          color="#f50"
-          raised
-          reverse
-          onPress={() =>
-            props.favorite
-              ? console.log("Already set as a favorite")
-              : props.markFavorite()
-          }
-        />
+        <View>
+          <Icon
+            name={props.favorite ? "heart" : "heart-o"}
+            type="font-awesome"
+            color="#f50"
+            raised
+            reverse
+            onPress={() =>
+              props.favorite
+                ? console.log("Already set as a favorite")
+                : props.markFavorite()
+            }
+          />
+          <Icon
+            name="pencil"
+            type="font-awesome"
+            color="#5637DD"
+            raised
+            reverse
+            onPress={() => props.onShowModal()}
+          />
+        </View>
       </Card>
     );
   }
