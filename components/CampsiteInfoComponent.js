@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { Text, View, ScrollView, FlatList } from "react-native";
+import {
+  Text,
+  View,
+  ScrollView,
+  FlatList,
+  Modal,
+  Button,
+  Stylesheet,
+} from "react-native";
 import { Card, Icon } from "react-native-elements";
 import { connect } from "react-redux";
 import { baseUrl } from "../shared/baseUrl";
@@ -114,6 +122,7 @@ class CampsiteInfo extends Component {
           campsite={campsite}
           favorite={this.props.favorites.includes(campsiteId)}
           markFavorite={() => this.markFavorite(campsiteId)}
+          onShowModal={() => this.toggleModal()}
         />
         <RenderComments comments={comments} />
       </ScrollView>
