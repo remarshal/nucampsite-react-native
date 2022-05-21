@@ -93,6 +93,9 @@ class CampsiteInfo extends Component {
 
     this.state = {
       showModal: false,
+      rating: 5,
+      author: "",
+      text: "",
     };
   }
 
@@ -102,6 +105,20 @@ class CampsiteInfo extends Component {
 
   toggleModal() {
     this.setState({ showModal: !this.state.showModal });
+  }
+
+  handleComment(campsiteId) {
+    console.log(JSON.stringify(this.state));
+    this.toggleModal();
+  }
+
+  resetForm() {
+    this.setState({
+      showModal: false,
+      rating: 5,
+      author: "",
+      text: "",
+    });
   }
 
   markFavorite(campsiteId) {
