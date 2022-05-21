@@ -92,6 +92,10 @@ class CampsiteInfo extends Component {
     title: "Campsite Information",
   };
 
+  toggleModal() {
+    this.setState({ showModal: !this.state.showModal });
+  }
+
   markFavorite(campsiteId) {
     this.props.postFavorite(campsiteId);
   }
